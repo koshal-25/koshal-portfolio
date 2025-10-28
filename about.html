@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | Koshal</title>
+
+  <!-- Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Icons & libs -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    /* Background */
+    #particles-js {
+      position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+    }
+
+    /* Progress */
+    .progress-container {
+      background-color: rgba(255,255,255,0.06);
+      border-radius: 9999px;
+      height: 12px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg,#6366f1,#8b5cf6);
+      width: 0%;
+      transition: width 1400ms cubic-bezier(.2,.9,.2,1);
+      border-radius: 9999px;
+    }
+
+    /* small adjustments */
+    .skill-title { font-weight: 600; }
+    .skill-percent { font-weight: 700; color: #e6eefc; }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .about-grid { flex-direction: column; text-align: center; gap: 1.25rem; }
+      .profile-img { margin-bottom: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white antialiased pt-20">
+
+  <div id="navbar"></div>
+
+
+  <!-- Particles -->
+  <div id="particles-js"></div>
+
+  <!-- NAV -->
+  <<nav class="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+  <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+    <h1 class="text-2xl font-bold tracking-wide text-indigo-400">Koshal<span class="text-white">.</span></h1>
+    <ul class="hidden md:flex gap-6 text-white font-medium">
+      <li><a href="index.html" class="hover:text-indigo-400">Home</a></li>
+      <li><a href="about.html" class="hover:text-indigo-400">About</a></li>
+      <li><a href="projects.html" class="hover:text-indigo-400">Projects</a></li>
+      <li><a href="contact.html" class="hover:text-indigo-400">Contact</a></li>
+    </ul>
+    <button id="mobile-toggle" class="md:hidden text-2xl text-indigo-400 focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile dropdown -->
+<div id="mobile-menu" class="hidden fixed top-14 left-0 w-full bg-gray-800 text-center py-4 z-40">
+  <a class="block py-2 hover:text-indigo-400" href="index.html">Home</a>
+  <a class="block py-2 hover:text-indigo-400" href="about.html">About</a>
+  <a class="block py-2 hover:text-indigo-400" href="projects.html">Projects</a>
+  <a class="block py-2 hover:text-indigo-400" href="contact.html">Contact</a>
+</div>
+
+
+  <!-- ABOUT -->
+  <main class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16">
+    <section class="max-w-5xl w-full flex about-grid items-start gap-10">
+      <!-- PROFILE -->
+      <div class="flex-shrink-0 flex justify-center profile-img" data-aos="fade-right">
+        <!-- Replace src with your profile image path -->
+        <img src="assets/profile.png" alt="Koshal" class="rounded-full w-40 md:w-56 border-4 border-indigo-500 shadow-xl">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-1" data-aos="fade-left">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3 text-indigo-400">About Me</h2>
+
+        <!-- Expanded "About" text -->
+        <p class="text-gray-300 leading-relaxed mb-5">
+          Hi — I’m <span class="text-indigo-400 font-semibold">Koshal</span>. I’m a student and front-end/UI developer with strong experience in 
+          <span class="font-semibold">HTML, CSS, JavaScript</span> and UI design. I also write Python for scripting, automation, and backend tasks. 
+          I enjoy solving hard problems and building interfaces that are both beautiful and easy to use.
+        </p>
+
+        <p class="text-gray-300 leading-relaxed mb-5">
+          I’m currently learning <span class="text-indigo-400 font-semibold">Java</span> and expanding into full-stack development. My toolset includes
+          modern UI principles, responsive design, and component-driven development. I like converting complex workflows into simple, delightful user experiences.
+        </p>
+
+        <p class="text-gray-300 leading-relaxed mb-6">
+          Outside of coding, I enjoy reading about design systems, experimenting with micro-interactions, and solving competitive programming problems. 
+          If you want to collaborate, share feedback, or just say hi — hit the Contact page or download my resume.
+        </p>
+
+        <!-- SKILLS -->
+        <div class="space-y-6">
+  <div class="skill" data-percent="100" aria-label="HTML and CSS skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">HTML &amp; CSS</div>
+      <div class="skill-percent">100%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="skill" data-percent="100" aria-label="UI and UX skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">UI / UX Design</div>
+      <div class="skill-percent">100%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="skill" data-percent="100" aria-label="Python skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">Python (Core)</div>
+      <div class="skill-percent">100%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+   <div class="skill" data-percent="100" aria-label="SQL skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">SQL</div>
+      <div class="skill-percent">100%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="skill" data-percent="100" aria-label="Unity skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">Unity</div>
+      <div class="skill-percent">100%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+
+  <div class="skill" data-percent="90" aria-label="Python ML skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">Python (ML)</div>
+      <div class="skill-percent">90%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="skill" data-percent="85" aria-label="React skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">React</div>
+      <div class="skill-percent">85%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+ 
+  <div class="skill" data-percent="85" aria-label="JavaScript skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">JavaScript</div>
+      <div class="skill-percent">85%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+  
+   <div class="skill" data-percent="80" aria-label="Full stack skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">Full Stack (Learning)</div>
+      <div class="skill-percent">80%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+
+  <div class="skill" data-percent="75" aria-label="C++ skill">
+    <div class="flex items-center justify-between mb-2">
+      <div class="skill-title text-gray-100">C#</div>
+      <div class="skill-percent">75%</div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+ 
+   
+
+</div>
+
+          
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    // AOS
+    AOS.init({ once: true, duration: 800 });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Particles
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#8b5cf6" },
+        shape: { type: "circle" },
+        opacity: { value: 0.45 },
+        size: { value: 3 },
+        line_linked: { enable: true, distance: 120, color: "#8b5cf6", opacity: 0.25, width: 1 },
+        move: { speed: 1, out_mode: "out" }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+
+    // IntersectionObserver to animate progress bars once they enter viewport
+    const skills = document.querySelectorAll('.skill');
+
+    if ('IntersectionObserver' in window) {
+      const obsOptions = { root: null, rootMargin: '0px', threshold: 0.35 };
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const skill = entry.target;
+            const bar = skill.querySelector('.progress-bar');
+            const target = parseInt(skill.getAttribute('data-percent'), 10) || 0;
+            // Set width and aria value
+            bar.style.width = target + '%';
+            bar.setAttribute('aria-valuenow', target);
+            // Add a subtle glow when animated
+            bar.style.boxShadow = '0 6px 18px rgba(99,102,241,0.18)';
+            // Unobserve so it animates only once
+            observer.unobserve(skill);
+          }
+        });
+      }, obsOptions);
+
+      skills.forEach(s => obs.observe(s));
+    } else {
+      // Fallback: animate all bars after load
+      window.addEventListener('load', () => {
+        skills.forEach(skill => {
+          const bar = skill.querySelector('.progress-bar');
+          const target = parseInt(skill.getAttribute('data-percent'), 10) || 0;
+          bar.style.width = target + '%';
+          bar.setAttribute('aria-valuenow', target);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

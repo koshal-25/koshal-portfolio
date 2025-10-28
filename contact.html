@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Koshal Raj Y</title>
+
+  <!-- Tailwind + AOS + FontAwesome + Particles -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body { background-color: #0f172a; color: #f8fafc; } /* Dark Indigo background & light text */
+    #particles-js { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+    input, textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(248,250,252,0.3); /* light text line */
+      color: #f8fafc;
+      padding: 0.5rem 0;
+      outline: none;
+    }
+    input:focus, textarea:focus {
+      border-color: #6366f1; /* Indigo accent */
+    }
+    .budget-option {
+      cursor: pointer;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid rgba(248,250,252,0.2);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .budget-option:hover, .budget-option.active {
+      background-color: #6366f1; /* Indigo accent */
+      color: white;
+      border-color: #6366f1;
+    }
+    .contact-btn {
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #6366f1;
+      transition: all 0.3s ease;
+      color: #f8fafc;
+    }
+    .contact-btn:hover {
+      color: #6366f1;
+      transform: translateX(5px);
+    }
+    a { color: #f8fafc; text-decoration: none; }
+    a:hover { color: #6366f1; }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white antialiased pt-20">
+
+  <!-- Particles -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+  <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+    <h1 class="text-2xl font-bold tracking-wide text-indigo-400">Koshal<span class="text-white">.</span></h1>
+    <ul class="hidden md:flex gap-6 text-white font-medium">
+      <li><a href="index.html" class="hover:text-indigo-400">Home</a></li>
+      <li><a href="about.html" class="hover:text-indigo-400">About</a></li>
+      <li><a href="projects.html" class="hover:text-indigo-400">Projects</a></li>
+      <li><a href="contact.html" class="hover:text-indigo-400">Contact</a></li>
+    </ul>
+    <button id="mobile-toggle" class="md:hidden text-2xl text-indigo-400 focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile dropdown -->
+<div id="mobile-menu" class="hidden fixed top-14 left-0 w-full bg-gray-800 text-center py-4 z-40">
+  <a class="block py-2 hover:text-indigo-400" href="index.html">Home</a>
+  <a class="block py-2 hover:text-indigo-400" href="about.html">About</a>
+  <a class="block py-2 hover:text-indigo-400" href="projects.html">Projects</a>
+  <a class="block py-2 hover:text-indigo-400" href="contact.html">Contact</a>
+</div>
+
+
+  <!-- Contact Section -->
+  <main class="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 text-center max-w-2xl mx-auto" data-aos="fade-up">
+    <p class="text-gray-400 uppercase tracking-widest mb-2 text-sm">Let’s start the conversation</p>
+    <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-2 text-indigo-400">GREAT DESIGN</h2>
+    <p class="tracking-widest text-gray-400 text-xs mb-1">starts with</p>
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-10 text-indigo-400">GREAT COLLABORATION</h2>
+
+    <!-- Contact Form -->
+ <form id="contact-form" class="w-full flex flex-col gap-6">
+  <input type="text" name="from_name" placeholder="YOUR NAME*" required>
+  <input type="email" name="from_email" placeholder="YOUR EMAIL*" required>
+  <input type="text" name="phone" placeholder="PHONE*">
+  <textarea name="message" rows="3" placeholder="HOW CAN I HELP YOU?"></textarea>
+
+  <div class="mt-2">
+    <p class="text-sm text-gray-400 mb-2">PROJECT BUDGET (INR)</p>
+    <div class="flex justify-center gap-4">
+      <div class="budget-option" data-value="3K–5K">3K–5K</div>
+      <div class="budget-option" data-value="5K–10K">5K–10K</div>
+      <div class="budget-option" data-value="MORE">MORE</div>
+    </div>
+    <input type="hidden" name="budget" id="budget-input">
+  </div>
+
+  <button type="submit" class="contact-btn mt-6 text-lg">DISCUSS THE PROJECT →</button>
+</form>
+
+
+<p id="success-msg" class="hidden text-green-400 mt-4 text-sm">✅ Message sent successfully!</p>
+
+
+  <!-- Bottom Info -->
+<div class="flex flex-col md:flex-row justify-between w-full mt-16 text-sm text-gray-400">
+  <div class="flex flex-col items-center md:items-start gap-1 mb-4 md:mb-0">
+    <a href="https://github.com/koshal-25" target="_blank" class="hover:text-indigo-400">GITHUB ↗</a>
+    <a href="https://www.linkedin.com/in/koshal-raj-y-a4bba2337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="hover:text-indigo-400">LINKEDIN ↗</a>
+    <a href="mailto:koshal2531@gmail.com" class="hover:text-indigo-400">EMAIL ↗</a>
+    <a href="https://www.instagram.com/31._.koshal._.07?igsh=dm5wazBpbTV6eHpv" target="_blank" class="hover:text-indigo-400">INSTAGRAM ↗</a>
+  </div>
+  <div class="text-center md:text-right">
+    <p class="font-semibold text-lg text-white">+91 7305549981</p>
+    <p><a href="mailto:koshal2531@gmail.com" class="hover:text-indigo-400">koshal2531@gmail.com</a></p>
+  </div>
+</div>
+
+  </main>
+
+  <script>
+    AOS.init({ once: true, duration: 800 });
+
+    // Mobile toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Particles
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#6366f1" },
+        shape: { type: "circle" },
+        opacity: { value: 0.45 },
+        size: { value: 3 },
+        line_linked: { enable: true, distance: 120, color: "#6366f1", opacity: 0.25, width: 1 },
+        move: { speed: 1, out_mode: "out" }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+
+    // Budget selection
+    const budgetOptions = document.querySelectorAll('.budget-option');
+    const budgetInput = document.getElementById('budget-input');
+    budgetOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        budgetOptions.forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        budgetInput.value = option.getAttribute('data-value');
+      });
+    });
+  </script>
+  <!-- ✅ EmailJS integration -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("c-RoL9j1ER9Rk4wiE"); // Replace with your EmailJS Public Key
+  })();
+
+  const form = document.getElementById("contact-form");
+  const successMsg = document.getElementById("success-msg");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    emailjs.sendForm("service_287kkao", "template_e85i4ff", this)
+      .then(() => {
+        form.reset();
+        successMsg.classList.remove("hidden");
+        setTimeout(() => successMsg.classList.add("hidden"), 4000);
+      }, (err) => {
+        alert("⚠️ Failed to send. Please try again later.");
+        console.error(err);
+      });
+  });
+</script>
+</body>
+</html>
